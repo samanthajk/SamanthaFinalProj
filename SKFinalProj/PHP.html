@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+   <title>Samantha Kreisel Final</title>
+ <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<h2>PHP</h2>
+<div class="links">
+<a  href="C++.html" > C++</a>
+<a  href="PHP.html" > PHP</a>
+<a  href="index.html" > Home</a>
+<a  href="SQL.html" > SQL</a>
+<a  href="JS.html" > JS</a>
+</div>
+<div class="desc">
+The purpose of this program is to preform a quiz about me (Sami), it checks for right and wrong answers.
+In this example of PHP code I demonstrate the use of arrays with a bit of UI work as well.
+</div>
+<div class="codeBlock">
+<pre>
+  <code>
+< ?php
+$SamiStuff = array(
+     "Fave Color" => "Yellow",
+     "Fave Food" => "Cake",
+     "Fave Musical" => "Hamilton",
+     "Hair Color" => "Brown",
+     "Eye Color" => "Brown",
+     "Dogs Name" => "Nikki",
+	 "Born" => "Missouri"   
+); //all info is set here
+if (isset($_POST['submit'])) {
+     $Answers = $_POST['answers'];
+     if (is_array($Answers)) {
+          foreach ($Answers as
+               $Stuff => $Response) {
+               $Response =
+                    stripslashes($Response);
+               if (strlen($Response)>0) {
+                    if (strcasecmp(
+                         $SamiStuff[$Stuff],
+                         $Response)==0)
+                         echo "<p>Correct! You got sami's $Stuff right, it was " .
+                              $SamiStuff[$Stuff] .
+                              ".</p>\n"; //correct output
+                    else
+                         echo "<p>Sorry, you got $Stuff wrong.</p>\n"; //incorrect output
+               }
+               else
+                    echo "<p>You did not enter a
+                         value for
+                         $Stuff.</p>\n"; //invalid output
+          }
+     }
+     echo "< p>< a href='SamiQuiz.php'>
+          Try again?</ a></ p >\n";
+}
+else {
+     echo "<form action='SamiQuiz.php'
+          method='POST'>\n";
+     foreach ($SamiStuff as
+          $Stuff => $Response)
+          echo "Do you know this about sami? $Stuff:
+               <input type='text' name='answers[" .
+               $Stuff . "]' /><br />\n"; //setting each question format
+          echo "<input type='submit'
+               name='submit'
+               value='Check' /> ";
+          echo "<input type='reset' name='reset'
+               value='Reset' />\n";
+          echo "</form>\n";
+}
+?>
+
+  </code>
+</pre>
+</div>
+</div>
+</body>
+</html>
