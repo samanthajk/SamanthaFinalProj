@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+   <title>Samantha Kreisel Final</title>
+ <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<h2>JavaScript</h2>
+<div class="links">
+<a  href="C++.html" > C++</a>
+<a  href="PHP.html" > PHP</a>
+<a  href="index.html" > Home</a>
+<a  href="SQL.html" > SQL</a>
+<a  href="JS.html" > JS</a>
+</div>
+<div class="desc">
+The purpose of this program is to display what the user types in the input box.
+In this example of JS code, the main purpose was to solve a bug in the code, but it makes use of commonly used things (addEventListener, and strings).
+</div>
+<h4>main.js</h4>
+<div class="codeBlock">
+<pre>
+  <code>
+'use strict';
+
+populateInfo() {
+	if (location.search) {
+		var greeting = location.search;
+		greeting = greeting.replace("+"," ");
+		greeting = greeting.substring(greeting.lastIndexOf("=")
+		+ 1);
+		document.getElementById("greetingtext").innerHTML =
+			decodeURIComponent(greeting);
+	}
+}
+
+if (window.addEventListener) {
+	window.addEventListener("load", populateInfo, false);
+} else if (window.attachEvent) {
+	window.attachEvent("onload", populateInfo);
+}
+  </code>
+</pre>
+</div>
+<h4>preview.html</h4>
+<div class="codeBlock">
+<pre>
+  <code>
+<! DOCTYPE html>
+< html>
+< head>
+   <!--
+      JavaScript 6th Edition
+      Chapter 9
+      Hands-on Project 9-1
+
+      Author: 
+      Date:   
+
+      Filename: preview.htm
+   -->
+   < meta charset="utf-8" />
+   < meta id="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+   < title>Hands-on Project 9-1</ title>
+   < link rel="stylesheet" href="styles.css" />
+   < script src="modernizr.custom.65897.js"></ script>
+</ head>
+
+< body>
+   < header>
+      < h1>
+         Hands-on Project 9-1
+      < h1>
+   </ header>
+
+   < article>
+      < h2>Greeting Preview< h2>
+      < h3 id="greetingtext">< h3>
+   < article>
+< body >
+< html >
+
+  </code>
+</pre>
+</div>
+<h4>index.html</h4>
+<div class="codeBlock">
+<pre>
+  <code>
+<! DOCTYPE html>
+< html>
+< head>
+   <!--
+      JavaScript 6th Edition
+      Chapter 9
+      Hands-on Project 9-1
+
+      Author: 
+      Date:   
+
+      Filename: index.htm
+   -->
+   < meta charset="utf-8" />
+   < meta id="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+   < title>Hands-on Project 9-1</ title>
+   < link rel="stylesheet" href="styles.css" />
+   < script src="modernizr.custom.65897.js"></ script>
+</ head>
+
+< body>
+   < header>
+      < h1>
+         Hands-on Project 9-1
+      </ h1>
+   </ header>
+
+   < article>
+      < h2>Create Greeting Card</ h2>
+      < form action="preview.htm">
+         < fieldset id="info">
+            < label for="greetinginput">Greeting Text</ label>
+            < input type="text" id="greetinginput" name="greeting" />
+         </ fieldset>
+         < fieldset id="submitbutton">
+            < input type="submit" id="submitBtn" value="Preview" />
+         < fieldset>
+      < form>
+   < article>
+< body>
+< html>
+
+
+  </code>
+</pre>
+</div>
+</div>
+</body>
+</html>

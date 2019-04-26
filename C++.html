@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+   <title>Samantha Kreisel Final</title>
+ <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<h2>C++</h2>
+<div class="links">
+<a  href="C++.html" > C++</a>
+<a  href="PHP.html" > PHP</a>
+<a  href="index.html" > Home</a>
+<a  href="SQL.html" > SQL</a>
+<a  href="JS.html" > JS</a>
+</div>
+<div class="desc">
+This program is one that allows the user to enter in variables and calculate the volume/surface area.
+In this example of C++ code I use simple user input and logical math to calculate the end product.
+</div>
+<div class="codeBlock">
+<pre>
+  <code>
+#include < iostream>
+#include < iomanip>
+#include  < cmath>
+
+using namespace std;
+
+const double PI = 3.14159;
+
+int main()
+{
+	double height = 0.0;
+	double radius = 0.0;
+	int hold;
+
+	cout << fixed << showpoint << setprecision(2);
+
+	cout << "Enter the height of the cylinder: ";
+	cin >> height;
+	cout << endl;
+
+	cout << "Enter the radius of the cylinder: ";
+	cin >> radius;
+	cout << endl;
+
+	cout << "Volume of the cylinder = "
+		<< PI * (radius, 2.0) * height << endl;
+
+	cout << "Surface area: "
+		<< 2 * PI * radius * height + PI * 2 * pow(radius, 2.0)
+		<< endl;
+
+	cin >> hold;
+
+	return 0;
+}
+
+  </code>
+</pre>
+</div>
+</body>
+</html>
