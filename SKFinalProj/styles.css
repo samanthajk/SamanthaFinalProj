@@ -20,7 +20,7 @@ h2 {
 	background-color: black;
 	color: white;
 	top: 0;
-	max-width: 95%;
+	max-width: 100%;
 }
 h4 {
 	margin-left: 10%;
@@ -28,7 +28,7 @@ h4 {
 .links {
 	font-size: 20px;
 	list-style-type: none;
-	max-width: 95%;
+	max-width: 100%;
 	display: flex;
     justify-content: center;
 }
